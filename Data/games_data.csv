@@ -1,0 +1,51 @@
+GameID,Publisher,Rating,Genre,Game_Length,ReleaseDate
+5ef9a9cf-73e9-4238-ad10-e172392523ca,Microsoft Studios,T,Strategy,46,2023-09-05
+dea25ab4-5877-4611-9d2e-d84f423dc6d3,Nintendo,T,Adventure,25,2019-08-26
+7ff1d960-3256-408f-a623-8d7277a517f1,Bethesda Softworks,M,Adventure,45,2025-05-02
+1bf25c77-571a-4447-87a5-9db3fc5fb8ba,Bandai Namco Entertainment,E,RPG,76,2023-05-27
+5f7d48b2-7775-485a-8980-8998428ee085,Microsoft Studios,E,RPG,40,2016-12-19
+b86137b7-6409-4f52-a2c1-fba8dea06362,Bandai Namco Entertainment,M,Strategy,92,2023-10-27
+d32716aa-a7d5-4733-867c-d6e29aee6cbd,Bandai Namco Entertainment,M,RPG,70,2018-09-25
+6b680012-5fd7-47e7-94f0-1c362365cca0,Sega,E,Adventure,33,2021-07-01
+3b30792d-235b-40a5-872b-fdf383c54dd4,Take-Two Interactive,T,FPS,97,2020-06-22
+01b3b20c-1c59-4e93-9f6e-c244df5b49cf,Sega,T,MMO,96,2026-01-08
+154cd0f8-5d78-4b0e-a72b-70ebc91a0986,Konami,M,RPG,10,2016-05-26
+4b41f5bf-c2a2-48b7-9c3c-467adee9c657,Sega,T,Strategy,87,2019-02-02
+e4808c74-8ce4-469e-80f6-feefb64a1230,Electronic Arts,T,MMO,72,2020-06-30
+78b0782d-d309-4c1d-bb15-dd732f3d05b0,Electronic Arts,T,RPG,79,2025-06-16
+17e6b679-d917-4f70-a18e-3a671e82f684,Bandai Namco Entertainment,T,Strategy,51,2018-09-22
+e8d13478-933e-4051-b08b-9cd74df67806,Sony Interactive Entertainment,M,MMO,36,2022-07-28
+77cdca62-5c9e-40b1-9cfd-309353f9509a,Square Enix,E,Strategy,10,2018-02-14
+252fdc5a-8d01-4856-96ea-4c03f0ed379f,Konami,M,RPG,22,2021-07-14
+46dd236b-acec-4c22-9d92-cd3e3c6b1472,Nintendo,T,Strategy,71,2018-01-15
+c783f1f9-7e6d-477b-b706-799b8f50e663,Electronic Arts,E,FPS,50,2023-12-19
+9d487b39-9689-4c1c-affb-cff86dba9fe0,Konami,E,MMO,7,2020-12-31
+c2066bb3-8e59-49f3-b817-7e31dfbb7272,Square Enix,M,Strategy,31,2017-05-11
+68cf9b03-e1b3-40cb-8ebc-6889b2da3a3a,Electronic Arts,T,Strategy,5,2017-06-09
+c969066a-3ce5-4ea4-8ecc-691364a1ebdf,Electronic Arts,T,RPG,67,2018-03-12
+1187d0d4-9ace-4a49-bc1d-2169ac290b83,Capcom,M,Adventure,3,2020-11-12
+ea645519-e287-4c1e-85f4-3565ad48dfc6,Activision,T,RPG,82,2022-10-24
+3d6b6f1b-2ba5-4ba7-ab72-bb59deffebb6,Bandai Namco Entertainment,M,Adventure,18,2022-09-06
+3a7b03c0-4696-44dc-bd6c-5055f5599787,Capcom,E,RPG,42,2019-12-25
+b605535c-856b-45a4-b619-714bbb495fdf,Activision,E,RPG,78,2019-01-08
+c6eadd79-703b-4d43-b916-8ac2fddea1d0,Konami,M,RPG,15,2023-03-29
+c95d8a41-90c7-4e10-8e01-8ed7e99cd236,Microsoft Studios,M,FPS,48,2016-08-03
+63b0cc9f-f66d-440f-9bcf-5774d0b7fa7c,Electronic Arts,T,Adventure,56,2021-02-20
+ae2b97c1-6c5f-4cb9-86cb-598f25f28961,Sega,M,RPG,79,2023-04-25
+f2fcb0a1-6adb-47a3-a337-3c8230359fbf,Rockstar Games,T,Adventure,20,2018-03-14
+b07a2411-2c47-4ad4-80e6-84fcdb73e34e,Bandai Namco Entertainment,E,FPS,50,2023-02-15
+bc415669-67d3-411a-a247-1a24453d6764,Take-Two Interactive,E,Strategy,15,2025-10-11
+e50c0edf-1969-41de-b17d-a639bb467347,Nintendo,T,Adventure,43,2021-01-16
+6ddab45b-fa25-4b8d-b011-4f78daa2646b,Square Enix,M,RPG,49,2022-09-25
+2dacadec-c27d-4dda-909d-65175362ed54,Bethesda Softworks,M,RPG,36,2024-01-01
+0696d7ba-ecd4-4966-a1be-5914fa78a493,Rockstar Games,T,Strategy,44,2019-02-27
+5b32adfb-668f-403a-a1c2-d6b4d18cb76f,Microsoft Studios,E,Strategy,13,2021-10-07
+8429784c-e139-4db4-b9d2-a67b2e0f14dc,Activision,M,RPG,13,2025-07-17
+cda7aead-adcb-4089-8118-26ed87cbdbc6,Ubisoft,E,RPG,44,2022-05-09
+581947ef-07e2-4060-81a6-8f674b926973,Sony Interactive Entertainment,M,RPG,56,2017-12-12
+d780a13c-e355-46c1-b8c2-de17a59dd34b,Konami,T,Strategy,89,2018-07-20
+6a1fa066-42cd-4f15-b7be-b22b622b7fdc,Rockstar Games,T,Adventure,1,2025-03-21
+0ed0f31d-b9a2-4bc7-8858-40b1fca61ec7,Nintendo,E,Adventure,9,2023-12-20
+3a2cf879-d1aa-4671-8fcd-294b1559b4be,Electronic Arts,T,FPS,87,2021-08-23
+bda51efc-3424-4341-9d52-f68d44d5b244,Take-Two Interactive,T,FPS,18,2023-01-04
+e9b05ba1-e7ea-40a5-8b7e-d770190cf1eb,Konami,T,FPS,43,2025-01-29
