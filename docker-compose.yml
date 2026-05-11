@@ -1,0 +1,180 @@
+version: "3.8"
+
+services:
+  namenode:
+    build:
+      context: namenode/
+      dockerfile: Dockerfile
+    container_name: namenode
+    restart: always
+    ports:
+      - 9870:9870
+      - 9000:9000
+    volumes:
+      - hadoop_namenode:/hadoop/dfs/name
+      - ./Data:/Workspace/Data
+      - ./Code:/Workspace/Code
+    environment:
+      - CLUSTER_NAME=hadoop-cluster
+    env_file:
+      - ./hadoop.env
+    networks:
+      - hadoop-network
+
+  datanode-1:
+    build:
+      context: datanode/
+      dockerfile: Dockerfile
+    container_name: datanode-1
+    restart: always
+    volumes:
+      - hadoop_datanode1:/hadoop/dfs/data
+    depends_on:
+      - namenode
+    env_file:
+      - ./hadoop.env
+    ports:
+      - 9864:9864
+    networks:
+      - hadoop-network
+
+  datanode-2:
+    build:
+      context: datanode/
+      dockerfile: Dockerfile
+    container_name: datanode-2
+    restart: always
+    volumes:
+      - hadoop_datanode2:/hadoop/dfs/data
+    depends_on:
+      - namenode
+    env_file:
+      - ./hadoop.env
+    ports:
+      - 9865:9864
+    networks:
+      - hadoop-network
+
+  resourcemanager:
+    build:
+      context: resourcemanager/
+      dockerfile: Dockerfile
+    container_name: resourcemanager
+    restart: always
+    depends_on:
+      - namenode
+      - datanode-1
+      - datanode-2
+      - nodemanager
+    ports:
+      - 8032:8032
+      - 8088:8088
+    env_file:
+      - ./hadoop.env
+    networks:
+      - hadoop-network
+
+  nodemanager:
+    build:
+      context: nodemanager/
+      dockerfile: Dockerfile
+    container_name: nodemanager
+    restart: always
+    depends_on:
+      - namenode
+      - datanode-1
+      - datanode-2
+    env_file:
+      - ./hadoop.env
+    networks:
+      - hadoop-network
+
+  historyserver:
+    build:
+      context: historyserver/
+      dockerfile: Dockerfile
+    container_name: historyserver
+    restart: always
+    depends_on:
+      - resourcemanager
+      - namenode
+      - datanode-1
+      - datanode-2
+    volumes:
+      - hadoop_historyserver:/hadoop/yarn/timeline
+    env_file:
+      - ./hadoop.env
+    networks:
+      - hadoop-network
+
+  spark-master:
+    image: spark-base:3.4.3-dorian
+    container_name: spark-master
+    ports:
+      - 9090:8081
+      - 7077:7077
+    volumes:
+      - ./apps:/opt/spark-apps
+      - ./data:/opt/spark-data
+    environment:
+      - SPARK_LOCAL_IP=spark-master
+      - SPARK_WORKLOAD=master
+    command: /bin/sh -c "./start-spark.sh"
+    networks:
+      - hadoop-network
+
+  spark-worker-a:
+    image: spark-base:3.4.3-dorian
+    container_name: spark-worker-a
+    ports:
+      - 9091:8081
+      - 7000:7000
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+      - SPARK_WORKER_CORES=1
+      - SPARK_WORKER_MEMORY=1G
+      - SPARK_DRIVER_MEMORY=1G
+      - SPARK_EXECUTOR_MEMORY=1G
+      - SPARK_WORKLOAD=worker
+      - SPARK_LOCAL_IP=spark-worker-a
+    volumes:
+      - ./apps:/opt/spark-apps
+      - ./data:/opt/spark-data
+    command: /bin/sh -c "./start-spark.sh"
+    networks:
+      - hadoop-network
+
+  spark-worker-b:
+    image: spark-base:3.4.3-dorian
+    container_name: spark-worker-b
+    ports:
+      - 9092:8081
+      - 7001:7000
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+      - SPARK_WORKER_CORES=1
+      - SPARK_WORKER_MEMORY=1G
+      - SPARK_DRIVER_MEMORY=1G
+      - SPARK_EXECUTOR_MEMORY=1G
+      - SPARK_WORKLOAD=worker
+      - SPARK_LOCAL_IP=spark-worker-b
+    volumes:
+      - ./apps:/opt/spark-apps
+      - ./data:/opt/spark-data
+    command: /bin/sh -c "./start-spark.sh"
+    networks:
+      - hadoop-network
+
+volumes:
+  hadoop_namenode:
+  hadoop_datanode1:
+  hadoop_datanode2:
+  hadoop_historyserver:
+
+networks:
+  hadoop-network:
+    driver: bridge
